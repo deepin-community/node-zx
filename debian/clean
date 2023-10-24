@@ -1,0 +1,8 @@
+build/
+dist/
+zx.1
+node_modules/
+test/fixtures/js-project/node_modules/
+test/fixtures/ts-project/build/
+test/fixtures/ts-project/node_modules/
+test/fixtures/ts-project/package-lock.json

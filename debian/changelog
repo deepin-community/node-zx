@@ -1,5 +1,75 @@
-template-repository (1.0-1) unstable; urgency=medium
+node-zx (7.1.1+~cs6.7.23-2) unstable; urgency=medium
 
-  * Initial release
+  [ Yadd ]
+  * Declare compliance with policy 4.6.2
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+  [ Hans Joachim Desserud ]
+  * Drop more network tests (Closes: #1026257)
+
+ -- Yadd <yadd@debian.org>  Sat, 17 Dec 2022 16:20:19 +0100
+
+node-zx (7.1.1+~cs6.7.23-1) unstable; urgency=medium
+
+  * Fix debian/watch
+  * New upstream version 7.1.1+~cs6.7.23
+  * Use node-fetch ts declarations
+  * Refresh patches
+  * Back to unstable
+
+ -- Yadd <yadd@debian.org>  Mon, 07 Nov 2022 16:23:08 +0100
+
+node-zx (7.0.8+~cs6.7.23-1) experimental; urgency=medium
+
+  * New upstream version 7.0.8+~cs6.7.23
+  * Drop add_missing_cr_http_fixture.patch, now included in upstream
+  * Render zx compatible with node-fetch >= 3
+  * Install examples
+
+ -- Yadd <yadd@debian.org>  Tue, 02 Aug 2022 22:17:30 +0200
+
+node-zx (7.0.7+~cs6.7.23-2) unstable; urgency=medium
+
+  * Patch: fix failing test with node 18
+
+ -- Jérémy Lal <kapouer@melix.org>  Sun, 17 Jul 2022 18:38:17 +0200
+
+node-zx (7.0.7+~cs6.7.23-1) unstable; urgency=medium
+
+  * New upstream version 7.0.7+~cs6.7.23
+  * Refresh patches
+
+ -- Yadd <yadd@debian.org>  Mon, 04 Jul 2022 09:14:24 +0200
+
+node-zx (7.0.5+~cs6.7.23-1) unstable; urgency=medium
+
+  * Clean useless link
+  * Declare compliance with policy 4.6.1
+  * Embed @types/ps-tree
+  * New upstream version 7.0.5+~cs6.7.23
+  * Build with typescript
+  * Update test (uvu)
+  * Drop test that fail with autopkgtest
+  * Update build dependencies
+
+ -- Yadd <yadd@debian.org>  Fri, 01 Jul 2022 22:55:39 +0200
+
+node-zx (6.1.0+~cs5.6.21-1) unstable; urgency=medium
+
+  * New upstream version
+  * Update description
+  * Refresh patches
+
+ -- Yadd <yadd@debian.org>  Sun, 24 Apr 2022 08:47:45 +0200
+
+node-zx (6.0.7+~cs5.6.21-3) unstable; urgency=medium
+
+  * Install docs
+  * Fix autopkgtest
+
+ -- Yadd <yadd@debian.org>  Sun, 10 Apr 2022 07:16:41 +0200
+
+node-zx (6.0.7+~cs5.6.21-2) experimental; urgency=medium
+
+  * Initial release (Closes: #1005090)
+
+ -- Yadd <yadd@debian.org>  Fri, 08 Apr 2022 09:07:21 +0200

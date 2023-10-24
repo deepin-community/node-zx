@@ -1,0 +1,1 @@
+uvu -b -i 'extra.test.js|package.test.js' test '.*.test.js'
