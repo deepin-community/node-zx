@@ -1,0 +1,25 @@
+Description: update ts config
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-11-07
+
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -1,13 +1,14 @@
+ {
+   "compilerOptions": {
++    "allowSyntheticDefaultImports": true,
+     "target": "ES2021",
+     "lib": ["ES2021", "DOM"],
+-    "moduleResolution": "NodeNext",
+-    "module": "NodeNext",
++    "moduleResolution": "node",
++    "module": "esnext",
+     "strict": true,
+     "outDir": "./build",
+     "declaration": true
+   },
+   "include": ["./src/**/*"],
+-  "exclude": ["./src/globals.ts"]
++  "exclude": ["./src/globals.ts","node_modules","types-*"]
+ }

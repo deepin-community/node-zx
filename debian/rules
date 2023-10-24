@@ -1,4 +1,20 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+include /usr/share/dpkg/pkg-info.mk
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	tsc --project tsconfig.prod.json
+	chmod +x build/cli.js
+	help2man -N -n 'Tool to launch modern Javascript scripts' --version-string=`pkgjs-utils pjson . version` ./build/cli.js >zx.1
+	perl -i -pe 's/cli\.js/zx/g;s/CLI\.JS/XZ/g' zx.1
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod +x debian/zx/usr/share/nodejs/ps-tree/bin/ps-tree.js \
+		debian/zx/usr/share/nodejs/zx/build/cli.js

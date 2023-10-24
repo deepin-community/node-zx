@@ -1,0 +1,59 @@
+Description: drop network test
+Author: Yadd <yadd@debian.org>
+Forwarded: not-needed
+Last-Update: 2022-12-17
+
+--- a/test/cli.test.js
++++ b/test/cli.test.js
+@@ -96,6 +96,7 @@
+   assert.ok(p.stderr.includes(prefix))
+ })
+ 
++/*
+ test('scripts from https', async () => {
+   $`cat ${path.resolve('test/fixtures/echo.http')} | nc -l 8080`
+   let out = await $`node build/cli.js http://127.0.0.1:8080/echo.mjs`
+@@ -107,6 +108,7 @@
+   let out = await $`node build/cli.js http://127.0.0.1:8081`.nothrow()
+   assert.match(out.stderr, "Error: Can't get")
+ })
++*/
+ 
+ test('scripts with no extension', async () => {
+   await $`node build/cli.js test/fixtures/no-extension`
+--- a/test/goods.test.js
++++ b/test/goods.test.js
+@@ -43,13 +43,6 @@
+   assert.equal(await globby('*.md'), ['README.md'])
+ })
+ 
+-test('fetch() works', async () => {
+-  assert.match(
+-    await fetch('https://medv.io').then((res) => res.text()),
+-    /Anton Medvedev/
+-  )
+-})
+-
+ test('echo() works', async () => {
+   let stdout = ''
+   let log = console.log
+--- a/test/deps.test.js
++++ b/test/deps.test.js
+@@ -21,7 +21,7 @@
+ 
+ $.verbose = false
+ 
+-test('installDeps() loader works via JS API', async () => {
++test.skip('installDeps() loader works via JS API', async () => {
+   await installDeps({
+     cpy: '9.0.1',
+     'lodash-es': '4.17.21',
+@@ -30,7 +30,7 @@
+   assert.instance((await import('lodash-es')).pick, Function)
+ })
+ 
+-test('installDeps() loader works via CLI', async () => {
++test.skip('installDeps() loader works via CLI', async () => {
+   let out =
+     await $`node build/cli.js --install <<< 'import _ from "lodash" /* @4.17.15 */; console.log(_.VERSION)'`
+   assert.match(out.stdout, '4.17.15')

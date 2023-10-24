@@ -1,0 +1,42 @@
+version=4
+opts=\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-zx-$1/ \
+ https://github.com/google/zx/tags .*/archive.*/v?([\d\.]+).tar.gz group
+
+opts=\
+component=event-stream,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-event-stream-$1/ \
+ https://github.com/dominictarr/event-stream/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=from,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-from-$1/" \
+ https://registry.npmjs.org/from https://registry.npmjs.org/from/-/from-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=map-stream,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-map-stream-$1/" \
+ https://registry.npmjs.org/map-stream https://registry.npmjs.org/map-stream/-/map-stream-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=pause-stream,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-pause-stream-$1/" \
+ https://registry.npmjs.org/pause-stream https://registry.npmjs.org/pause-stream/-/pause-stream-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+opts=\
+component=ps-tree,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-ps-tree-$1/ \
+ https://github.com/indexzero/ps-tree/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts="searchmode=plain,component=types-ps-tree,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-types-ps-tree-$1/" \
+ https://registry.npmjs.org/@types/ps-tree https://registry.npmjs.org/@types/ps-tree/-/ps-tree-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,component=stream-combiner,ctype=nodejs,pgpmode=none,filenamemangle=s/^.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-stream-combiner-$1/" \
+ https://registry.npmjs.org/stream-combiner https://registry.npmjs.org/stream-combiner/-/stream-combiner-([\d\.]+)@ARCHIVE_EXT@ checksum

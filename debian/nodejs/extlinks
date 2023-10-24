@@ -1,0 +1,16 @@
+chalk
+data-uri-to-buffer
+fetch-blob
+fs-extra
+form-data
+formdata-polyfill
+globby
+minimist
+node-fetch
+uvu	test
+which
+yaml
+@types/fs-extra
+@types/minimist
+@types/node
+@types/which
