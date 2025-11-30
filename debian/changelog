@@ -1,3 +1,13 @@
+node-zx (7.1.1+~cs6.7.23-3) unstable; urgency=medium
+
+  [ Yadd ]
+  * Drop build dependency to node-data-uri-to-buffer
+
+  [ Jérémy Lal ]
+  * patch: fix flaky test (upstream)
+
+ -- Jérémy Lal <kapouer@melix.org>  Tue, 05 Dec 2023 15:19:05 +0100
+
 node-zx (7.1.1+~cs6.7.23-2) unstable; urgency=medium
 
   [ Yadd ]

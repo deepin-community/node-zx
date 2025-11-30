@@ -11,7 +11,6 @@ Build-Depends:
  , less <!nocheck>
  , netcat-openbsd <!nocheck>
  , node-chalk (>= 4.1.2)
- , node-data-uri-to-buffer
  , node-duplexer
  , node-fetch (>= 3)
  , node-form-data
